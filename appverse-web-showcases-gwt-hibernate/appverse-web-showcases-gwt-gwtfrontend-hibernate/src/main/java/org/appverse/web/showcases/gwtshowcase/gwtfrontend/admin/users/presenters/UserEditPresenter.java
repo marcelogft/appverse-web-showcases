@@ -79,6 +79,8 @@ public class UserEditPresenter extends
 	@Override
 	public void delete(final UserVO user) {
 
+        // TODO: This needs to be passed to the view so it can be properly tested with unit testing
+
 		ConfirmMessageBox box = new ConfirmMessageBox(adminMessages.confirmation(),
 				adminMessages.confirmDeletion());
 

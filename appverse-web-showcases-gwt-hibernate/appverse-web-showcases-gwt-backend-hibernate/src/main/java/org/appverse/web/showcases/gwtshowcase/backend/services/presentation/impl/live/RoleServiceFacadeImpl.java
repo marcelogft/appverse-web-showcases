@@ -31,8 +31,6 @@ public class RoleServiceFacadeImpl extends AbstractPresentationService
 	private GWTPaginatedDataFilterP2BBeanConverter gwtPaginatedDataFilterP2BBeanConverter;
 
 	@Autowired
-	private PaginatedDataFilterP2BBeanConverter paginatedDataFilterP2BBeanConverter;
-	@Autowired
 	private GWTItemRoleP2BBeanConverter itemRoleP2BBeanConverter;
 
 	public static final int NUM_ENVS_LIST = 3;
@@ -65,7 +63,7 @@ public class RoleServiceFacadeImpl extends AbstractPresentationService
 	public GWTPresentationPaginatedResult<RoleVO> loadRoles(
 			final GWTPresentationPaginatedDataFilter config) throws Exception {
 
-		final BusinessPaginatedDataFilter businessDatafilter = paginatedDataFilterP2BBeanConverter
+		final BusinessPaginatedDataFilter businessDatafilter = gwtPaginatedDataFilterP2BBeanConverter
 				.convert(config);
 
 		// Get the total number of rows first

@@ -49,9 +49,6 @@ public class UserRestServiceFacadeImpl extends AbstractPresentationService imple
 	@Autowired
 	private GWTPaginatedDataFilterP2BBeanConverter gwtPaginatedDataFilterP2BBeanConverter;
 
-	@Autowired
-	private PaginatedDataFilterP2BBeanConverter paginatedDataFilterP2BBeanConverter;
-
 	public UserRestServiceFacadeImpl() {
 	}
 	
@@ -74,7 +71,7 @@ public class UserRestServiceFacadeImpl extends AbstractPresentationService imple
 	public GWTPresentationPaginatedResult<UserVO> loadUsers(
 			final GWTPresentationPaginatedDataFilter config) throws Exception {
 
-		final BusinessPaginatedDataFilter businessDatafilter = paginatedDataFilterP2BBeanConverter
+		final BusinessPaginatedDataFilter businessDatafilter = gwtPaginatedDataFilterP2BBeanConverter
 				.convert(config);
 
 		// Get the total number of rows first
