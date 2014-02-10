@@ -267,42 +267,42 @@
             <version>2.5.0</version>
         </dependency>
 
-<!--
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
-            <version>2.5.0</version>
-        </dependency>
--->
+        <!-- TODO: Test for GWT Testing - this is not necessary
+                <dependency>
+                    <groupId>com.google.gwt</groupId>
+                    <artifactId>gwt-dev</artifactId>
+                    <version>2.5.0</version>
+                </dependency>
+        -->
 
-	</dependencies>
+            </dependencies>
 
-	<profiles>
-		<profile>
-			<id>development</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>gwt-maven-plugin</artifactId>
-						<configuration>
-							<runTarget>admin.html</runTarget>
-							<hostedWebapp>../appverse-web-showcases-gwt-backend-hibernate/target/appverse-web-showcases-gwt-backend-${project.version}/</hostedWebapp>
-                            <includes>**/*GwtTest.java</includes>
-                            <mode>htmlunit</mode>
-						</configuration>
-						<executions>
-							<execution>
-								<goals>
-									<goal>compile</goal>
-									<goal>resources</goal>
-                                    <goal>test</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-</project>
+            <profiles>
+                <profile>
+                    <id>development</id>
+                    <build>
+                        <plugins>
+                            <plugin>
+                                <groupId>org.codehaus.mojo</groupId>
+                                <artifactId>gwt-maven-plugin</artifactId>
+                                <configuration>
+                                    <runTarget>admin.html</runTarget>
+                                    <hostedWebapp>../appverse-web-showcases-gwt-backend-hibernate/target/appverse-web-showcases-gwt-backend-${project.version}/</hostedWebapp>
+                                    <includes>**/*GwtTest.java</includes>
+                                    <mode>htmlunit</mode>
+                                </configuration>
+                                <executions>
+                                    <execution>
+                                        <goals>
+                                            <goal>compile</goal>
+                                            <goal>resources</goal>
+                                            <goal>test</goal>
+                                        </goals>
+                                    </execution>
+                                </executions>
+                            </plugin>
+                        </plugins>
+                    </build>
+                </profile>
+            </profiles>
+        </project>

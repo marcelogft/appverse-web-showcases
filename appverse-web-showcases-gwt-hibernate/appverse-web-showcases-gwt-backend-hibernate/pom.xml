@@ -266,14 +266,14 @@
             <scope>test</scope>
         </dependency>
 
-<!--
+        <!-- TODO: Test for GWT Testing - this is not necessary
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-dev</artifactId>
             <version>2.5.0</version>
             <scope>test</scope>
         </dependency>
--->
+        -->
 
     </dependencies>
 </project>
