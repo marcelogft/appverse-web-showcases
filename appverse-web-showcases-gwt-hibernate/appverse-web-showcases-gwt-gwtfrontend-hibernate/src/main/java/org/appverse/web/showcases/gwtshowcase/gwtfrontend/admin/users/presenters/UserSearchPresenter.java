@@ -46,7 +46,13 @@ public class UserSearchPresenter extends
 		UserSearchView.IUserSearchPresenter {
 
 	private AdminInjector injector;
-	private UserRpcCommand userRpcCommand;
+
+    /* Added, necessary for pure unit testing */
+    public void setUserRpcCommand(UserRpcCommand userRpcCommand) {
+        this.userRpcCommand = userRpcCommand;
+    }
+
+    private UserRpcCommand userRpcCommand;
 
 	@Override
 	public void addUser() {
