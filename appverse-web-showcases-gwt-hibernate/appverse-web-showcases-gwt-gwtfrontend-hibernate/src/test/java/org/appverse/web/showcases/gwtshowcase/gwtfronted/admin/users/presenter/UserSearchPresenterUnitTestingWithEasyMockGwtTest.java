@@ -48,7 +48,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class UnitTestingWithEasyMockGwtTest {
+public class UserSearchPresenterUnitTestingWithEasyMockGwtTest {
 
     List users = null;
 
