@@ -51,7 +51,7 @@ import com.mvp4g.client.annotation.InitHistory;
 public interface AdminEventBus extends FrameworkEventBus {
 
 	@Event(handlers = { AdminLayoutPresenter.class })
-	public void adminLayoutChangeBody(Widget bodyWidget);
+	public void adminLayoutChangeBody(IsWidget bodyWidget);
 
 	@Event(handlers = { AdminModuleLayoutManagerPresenter.class })
 	public void changeLayoutWidget(IsWidget layoutWidget);
