@@ -23,7 +23,6 @@
  */
 package org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.roles.editors.impl.gxt;
 
-import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.editor.client.Editor;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -32,17 +31,12 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.sencha.gxt.core.client.ValueProvider;
 import com.sencha.gxt.data.shared.LabelProvider;
-import com.sencha.gxt.data.shared.ListStore;
 import com.sencha.gxt.data.shared.ModelKeyProvider;
 import com.sencha.gxt.data.shared.PropertyAccess;
 import com.sencha.gxt.widget.core.client.form.CheckBox;
-import com.sencha.gxt.widget.core.client.form.DualListField;
 import com.sencha.gxt.widget.core.client.form.TextField;
-import com.sencha.gxt.widget.core.client.form.validator.EmptyValidator;
 import org.appverse.web.framework.backend.frontfacade.gxt.model.presentation.GWTItemVO;
 import org.appverse.web.showcases.gwtshowcase.backend.model.presentation.RoleVO;
-
-import java.util.List;
 
 public class RoleVOEditor extends Composite implements Editor<RoleVO> {
 
