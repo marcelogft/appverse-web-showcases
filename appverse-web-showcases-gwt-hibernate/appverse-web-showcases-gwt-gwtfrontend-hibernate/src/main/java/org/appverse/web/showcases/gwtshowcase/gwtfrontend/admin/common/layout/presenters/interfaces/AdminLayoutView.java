@@ -33,8 +33,8 @@ public interface AdminLayoutView extends
 		LazyView {
 
 	interface IAdminLayoutPresenter {
-		public void onAdminLayoutChangeBody(Widget bodyWidget);
+		public void onAdminLayoutChangeBody(IsWidget bodyWidget);
 	}
 
-	public void setBodyWidget(Widget w);
+	public void setBodyWidget(IsWidget w);
 }

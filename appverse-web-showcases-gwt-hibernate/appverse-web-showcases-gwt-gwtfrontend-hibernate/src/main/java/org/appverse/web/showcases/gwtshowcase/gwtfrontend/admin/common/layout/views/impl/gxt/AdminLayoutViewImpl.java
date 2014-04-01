@@ -23,6 +23,7 @@
  */
 package org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.common.layout.views.impl.gxt;
 
+import com.google.gwt.user.client.ui.IsWidget;
 import org.appverse.web.framework.frontend.gwt.rmvp.ReverseComposite;
 import org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.common.layout.presenters.interfaces.AdminLayoutView;
 
@@ -98,7 +99,7 @@ public class AdminLayoutViewImpl extends
 	}
 
 	@Override
-	public void setBodyWidget(final Widget widget) {
+	public void setBodyWidget(final IsWidget widget) {
 		body.clear();
 		body.add(widget);
 	}

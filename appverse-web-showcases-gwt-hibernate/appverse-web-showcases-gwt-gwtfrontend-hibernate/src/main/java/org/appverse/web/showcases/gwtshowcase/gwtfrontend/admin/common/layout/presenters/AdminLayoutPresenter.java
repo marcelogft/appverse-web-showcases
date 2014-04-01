@@ -23,6 +23,7 @@
  */
 package org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.common.layout.presenters;
 
+import com.google.gwt.user.client.ui.IsWidget;
 import org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.AdminEventBus;
 import org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.common.layout.presenters.interfaces.AdminLayoutView;
 import org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.common.layout.views.impl.gxt.AdminLayoutViewImpl;
@@ -37,7 +38,7 @@ public class AdminLayoutPresenter extends
 		AdminLayoutView.IAdminLayoutPresenter {
 
 	@Override
-	public void onAdminLayoutChangeBody(final Widget bodyWidget) {
+	public void onAdminLayoutChangeBody(final IsWidget bodyWidget) {
 		view.setBodyWidget(bodyWidget);
 	}
 
