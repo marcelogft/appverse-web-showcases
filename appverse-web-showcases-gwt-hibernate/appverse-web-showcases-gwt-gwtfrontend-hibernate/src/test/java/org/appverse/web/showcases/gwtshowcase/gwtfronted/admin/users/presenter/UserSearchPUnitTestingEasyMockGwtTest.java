@@ -48,7 +48,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class UserSearchPresenterUnitTestingWithEasyMockGwtTest {
+// This could be done as well with Jmock, Mockito, Jukito
+public class UserSearchPUnitTestingEasyMockGwtTest {
 
     List users = null;
 
