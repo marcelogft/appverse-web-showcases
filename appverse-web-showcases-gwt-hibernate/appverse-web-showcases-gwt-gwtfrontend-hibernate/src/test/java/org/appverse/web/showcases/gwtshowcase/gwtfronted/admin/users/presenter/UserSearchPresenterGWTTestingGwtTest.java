@@ -24,6 +24,7 @@
 package org.appverse.web.showcases.gwtshowcase.gwtfronted.admin.users.presenter;
 
 import com.google.gwt.junit.client.GWTTestCase;
+import org.appverse.web.showcases.gwtshowcase.gwtfronted.admin.users.mock.commands.UserRpcCommandMockGWTTestCase;
 import org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.users.presenters.UserSearchPresenter;
 import org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.users.views.impl.gxt.UserSearchViewImpl;
 import org.junit.After;
@@ -42,11 +43,26 @@ public class UserSearchPresenterGWTTestingGwtTest extends GWTTestCase {
 
     @Before
     public void before() {
+
         System.out.println("*********** UserSearchPresenterGWTTestingGwtTest: Before! start");
         presenter = new UserSearchPresenter();
+
         System.out.println("*********** UserSearchPresenterGWTTestingGwtTest: presenter created");
+
         view = new UserSearchViewImpl();
+
+        // Necessary to inject presenter to the view and view to the presenter
+        presenter.setView(view);
+        view.setPresenter(presenter);
+
+        // We need to add the mock command after createPresenter to override the default command implementation
+        presenter.createPresenter();
+
+        UserRpcCommandMockGWTTestCase userRpcCommandMockGWTTestCase = new UserRpcCommandMockGWTTestCase();
+        presenter.setUserRpcCommand(userRpcCommandMockGWTTestCase);
+
         view.createView();
+
         System.out.println("*********** UserSearchPresenterGWTTestingGwtTest: view created");
         presenter.setView(view);
         System.out.println("*********** UserSearchPresenterGWTTestingGwtTest: view injected in presenter. Before! End");
@@ -58,11 +74,21 @@ public class UserSearchPresenterGWTTestingGwtTest extends GWTTestCase {
     }
 
     @Test
-    public void testSecurityUserCanEditAndAddUsers() {
+    public void testLoadUsers() {
         System.out.println("*********** testSecurityUserCanEditAndAddUsers: before calling Before!");
         before();
+
+        // View shoud have loaded the users in the paginated grid
+
         System.out.println("*********** testSecurityUserCanEditAndAddUsers: after calling Before! END");
     }
 
+    @Test
+    public void testSearchUser() {
+        System.out.println("*********** testSecurityUserCanEditAndAddUsers: before calling Before!");
+        before();
 
+        presenter.searchUsers();
+        System.out.println("*********** testSecurityUserCanEditAndAddUsers: after calling Before! END");
+    }
 }

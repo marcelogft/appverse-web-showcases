@@ -253,29 +253,7 @@
             <scope>test</scope>
         </dependency>
 
-<!--
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-servlet</artifactId>
-            <version>2.5.0</version>
-        </dependency>
--->
-
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
-            <version>2.5.0</version>
-        </dependency>
-
-        <!-- TODO: Test for GWT Testing - this is not necessary
-                <dependency>
-                    <groupId>com.google.gwt</groupId>
-                    <artifactId>gwt-dev</artifactId>
-                    <version>2.5.0</version>
-                </dependency>
-        -->
-
-            </dependencies>
+     </dependencies>
 
             <profiles>
                 <profile>

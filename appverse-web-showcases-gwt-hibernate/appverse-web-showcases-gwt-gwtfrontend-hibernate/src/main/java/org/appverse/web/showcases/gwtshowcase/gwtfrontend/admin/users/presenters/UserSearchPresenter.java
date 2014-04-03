@@ -46,12 +46,6 @@ public class UserSearchPresenter extends
 		UserSearchView.IUserSearchPresenter {
 
 	private AdminInjector injector;
-
-    /* Added, necessary for pure unit testing */
-    public void setUserRpcCommand(UserRpcCommand userRpcCommand) {
-        this.userRpcCommand = userRpcCommand;
-    }
-
     private UserRpcCommand userRpcCommand;
 
 	@Override
@@ -122,4 +116,10 @@ public class UserSearchPresenter extends
 	public void onInit() {
 		eventBus.adminLayoutChangeBody(view.asWidget());
 	}
+
+    /* Added, necessary for pure unit testing */
+    public void setUserRpcCommand(UserRpcCommand userRpcCommand) {
+        this.userRpcCommand = userRpcCommand;
+    }
+
 }

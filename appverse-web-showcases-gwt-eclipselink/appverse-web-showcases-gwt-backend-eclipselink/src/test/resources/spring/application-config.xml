@@ -145,8 +145,8 @@ Copyright (c) 2012 GFT Appverse, S.L., Sociedad Unipersonal.
 
     <!-- Make sure you have this commented. It creates a dependency with ServletContext that we don't need to test the services layer with Spring JUnit.
         If you required handling request / response in your tests this would require extra setup so Spring JUnit can mock the servlet context.
-      <context:component-scan  base-package="org.appverse.web.framework.backend.frontfacade.json.controllers"/>
-	  <context:component-scan  base-package="org.appverse.web.framework.backend.frontfacade.gxt.controllers"/>	
+      <context:component-scan  base-package="org.appverse.web.framework.backend.frontfacade.json.authentication"/>
+	  <context:component-scan  base-package="org.appverse.web.framework.backend.frontfacade.gxt.authentication"/>
     -->
 
 </beans> 
