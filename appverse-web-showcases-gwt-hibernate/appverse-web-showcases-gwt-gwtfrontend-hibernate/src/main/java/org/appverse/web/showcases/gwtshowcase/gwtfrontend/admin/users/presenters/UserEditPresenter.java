@@ -174,4 +174,8 @@ public class UserEditPresenter extends
     public void setUserRpcCommand(UserRpcCommand userRpcCommand) {
         this.userRpcCommand = userRpcCommand;
     }
+
+    public void setRolesRpcCommand(RolesRpcCommand rolesRpcCommand) {
+        this.rolesRpcCommand = rolesRpcCommand;
+    }
 }
