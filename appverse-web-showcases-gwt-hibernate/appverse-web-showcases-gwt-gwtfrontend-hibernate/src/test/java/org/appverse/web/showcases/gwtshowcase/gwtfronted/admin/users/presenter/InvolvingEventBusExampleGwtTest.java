@@ -28,6 +28,7 @@ import com.google.gwt.junit.client.GWTTestCase;
 import com.mvp4g.client.Mvp4gModule;
 import com.mvp4g.client.event.BaseEventBus;
 import org.appverse.web.showcases.gwtshowcase.backend.model.presentation.UserVO;
+import org.appverse.web.showcases.gwtshowcase.gwtfronted.admin.users.mock.commands.RolesRpcCommandMockGWTTestCase;
 import org.appverse.web.showcases.gwtshowcase.gwtfronted.admin.users.mock.commands.UserRpcCommandMockGWTTestCase;
 import org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.AdminEventBus;
 import org.appverse.web.showcases.gwtshowcase.gwtfrontend.admin.users.presenters.UserEditPresenter;
@@ -44,12 +45,14 @@ public class InvolvingEventBusExampleGwtTest extends GWTTestCase {
     AdminEventBus adminEventBus = null;
 
     // Presenters and views involved in the test
-    UserSearchPresenter userSearchPresenter = null;
-    UserSearchViewImpl userSearchView = null;
+    UserSearchPresenter userSearchPresenter;
+    UserSearchViewImpl userSearchView;
 
-    UserEditPresenter userEditPresenter = null;
-    UserEditViewImpl userEditView = null;
+    UserEditPresenter userEditPresenter;
+    UserEditViewImpl userEditView;
 
+    UserRpcCommandMockGWTTestCase userRpcCommandMockGWTTestCase;
+    RolesRpcCommandMockGWTTestCase rolesRpcCommandMockGWTTestCase;
 
     @Override
     public String getModuleName() {
@@ -59,7 +62,7 @@ public class InvolvingEventBusExampleGwtTest extends GWTTestCase {
     @Before
     public void before() {
 
-        initEventBus();
+        init();
 
         // Init all your presenters and views here
         initUserSearchPresenterAndView();
@@ -67,11 +70,15 @@ public class InvolvingEventBusExampleGwtTest extends GWTTestCase {
 
     }
 
-    private void initEventBus(){
+    private void init(){
         // Enabling real EventBus
         Mvp4gModule module = (Mvp4gModule) GWT.create(Mvp4gModule.class);
         module.createAndStartModule();
         adminEventBus = (AdminEventBus)module.getEventBus();
+
+        userRpcCommandMockGWTTestCase = new UserRpcCommandMockGWTTestCase();
+        rolesRpcCommandMockGWTTestCase = new RolesRpcCommandMockGWTTestCase();
+
         System.out.println("*********** InvolvingEventBusExampleGwtTest: initEventBus successful");
     }
 
@@ -87,7 +94,6 @@ public class InvolvingEventBusExampleGwtTest extends GWTTestCase {
         userSearchPresenter.createPresenter();
 
         // Add here injected commands and other artifacts
-        UserRpcCommandMockGWTTestCase userRpcCommandMockGWTTestCase = new UserRpcCommandMockGWTTestCase();
         userSearchPresenter.setUserRpcCommand(userRpcCommandMockGWTTestCase);
 
         userSearchPresenter.setView(userSearchView);
@@ -111,8 +117,8 @@ public class InvolvingEventBusExampleGwtTest extends GWTTestCase {
         userEditPresenter.createPresenter();
 
         // Add here injected commands and other artifacts
-        UserRpcCommandMockGWTTestCase userRpcCommandMockGWTTestCase = new UserRpcCommandMockGWTTestCase();
         userEditPresenter.setUserRpcCommand(userRpcCommandMockGWTTestCase);
+        userEditPresenter.setRolesRpcCommand(rolesRpcCommandMockGWTTestCase);
 
         userEditPresenter.setView(userEditView);
         userEditView.createView();
