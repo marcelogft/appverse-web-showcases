@@ -26,5 +26,5 @@
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.google.gwt.dev.DevMode"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-war C:\git\appverse-web-showcases\appverse-web-showcases-gwt-eclipselink\appverse-web-showcases-gwt-backend-eclipselink\target\appverse-web-showcases-gwt-backend-eclipselink-1.4-MILESTONE_1 -remoteUI &quot;${gwt_remote_ui_server_port}:${unique_id}&quot; -logLevel INFO -port 8888 -codeServerPort 9997 org.appverse.web.showcases.gwtshowcase.gwtfrontend.Admin"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="appverse-web-showcases-gwt-gwtfrontend-eclipselink"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx512m"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms128m -Xmx768m -XX:MaxPermSize=256m -Djava.io.tmpdir=C:\Workspace\gwtdev\workspaces\gwttempdir"/>
 </launchConfiguration>
