@@ -79,6 +79,7 @@ public class UserEditPresenter extends
 		box.addHideHandler(new HideHandler() {
 			@Override
 			public void onHide(final HideEvent event) {
+/* Temporarily commented, this has changed in GXT 3.1.0b
 				Dialog btn = (Dialog) event.getSource();
 				String answer = btn.getHideButton().getText();
 				if (btn.getDialogMessages().yes().equals(answer)) {
@@ -90,6 +91,7 @@ public class UserEditPresenter extends
                                 }
 							});
 				}
+*/
 			}
 		});
 		box.show();

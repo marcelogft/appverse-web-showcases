@@ -86,6 +86,7 @@ public class UserEditPresenter extends
 			@Override
 			public void onHide(final HideEvent event) {
 				Dialog btn = (Dialog) event.getSource();
+/* Temporarily commented, this has changed in GXT 3.1.0b
 				String answer = btn.getHideButton().getText();
 				if (btn.getDialogMessages().yes().equals(answer)) {
 					userRpcCommand.deleteUser(user,
@@ -98,6 +99,7 @@ public class UserEditPresenter extends
 								}
 							});
 				}
+*/
 			}
 		});
 		box.show();
